@@ -4,24 +4,25 @@ import { OrbitControls } from '@react-three/drei';
 import { Link as ScrollLink } from 'react-scroll';
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-function TreeSphere() {
+function TreeSphere({ scale = 1.5 }) {
   const meshRef = useRef();
 
-  // Rotates continuously
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.005; // slow Y-axis spin
-      meshRef.current.rotation.x += 0.002; // optional X-axis drift
+      meshRef.current.rotation.y += 0.005;
+      meshRef.current.rotation.x += 0.002;
     }
   });
 
   return (
-    <mesh ref={meshRef}>
-      <icosahedronGeometry args={[1.5, 0]} />
+    <mesh ref={meshRef} scale={scale}>
+      <icosahedronGeometry args={[1, 0]} />
       <meshStandardMaterial color="#ff5050" roughness={0.6} metalness={0.3} />
     </mesh>
   );
 }
+const isMobile = window.innerWidth < 768;
+
 
 export default function Hero() {
   return (
@@ -74,7 +75,7 @@ export default function Hero() {
   <ambientLight intensity={0.5} />
   <directionalLight position={[3, 3, 3]} />
   <OrbitControls enableZoom={false} />
-  <TreeSphere />
+  <TreeSphere scale={isMobile ? 1 : 1.5}/>
 </Canvas>
 </motion.div>
 

@@ -8,11 +8,12 @@ export default function About() {
       className="w-full bg-[#1a1a1a] text-white py-24 px-6 md:px-20 flex flex-col md:flex-row items-center md:items-start justify-center gap-10"
     >
       <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        className="bg-[#a72020] w-100 h-100 sm:w-60 sm:h-60 md:w-100 md:h-100 rounded-3xl overflow-hidden shadow-xl flex-shrink-0"
-      >
+  initial={{ opacity: 0, x: -40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  className="bg-[#a72020] w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-3xl overflow-hidden shadow-xl flex-shrink-0 mx-auto md:mx-0"
+>
+
         <img
           src={profileImage}
           alt="Ansh Tamrakar"
