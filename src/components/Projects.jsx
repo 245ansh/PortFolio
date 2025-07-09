@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'AssessAI',
-    logo: 'src/assets/projects/assessai.png',
+    logo: '/assets/projects/assessai.png',
     description: [
       'AssessAI addresses the growing burden on teachers in educational institutions who struggle to offer personalized feedback due to large class sizes. The platform automates grading through an AI engine that evaluates both MCQs and subjective answers.',
       'It offers distinct dashboards for teachers and students to track performance, attendance, and assignment data. A built-in AI chatbot supports one-on-one interaction, and learning is assessed across audio, visual, and handwriting formats.',
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: 'CineSlate',
-    logo: 'src/assets/projects/cineslate.png',
+    logo: '/assets/projects/cineslate.png',
     description: [
       'CineSlate is a movie review and recommendation platform that unifies public and personal movie discovery. Users can browse, review, and rate movies while managing personalized watchlists.',
       'Built with SpringBoot and Thymeleaf, it provides secure login, seamless record keeping, and advanced search/filter mechanisms. It is optimized for both desktop and mobile use.',
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: 'SecureNotes',
-    logo: 'src/assets/projects/securenotes.png',
+    logo: '/assets/projects/securenotes.png',
     description: [
       'SecureNotes is a secure note management system supporting multiple users with role-based permissions. Built using Spring Security, it offers JWT-based authentication and integrates with Google OAuth for social login.',
       'Security features include encrypted storage, Two-Factor Authentication (2FA), and protected route access. Notes can only be accessed after strict verification, making it suitable for sensitive information.',
