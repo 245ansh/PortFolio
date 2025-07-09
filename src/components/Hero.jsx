@@ -1,0 +1,83 @@
+import { motion } from 'framer-motion';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { Link as ScrollLink } from 'react-scroll';
+import { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+function TreeSphere() {
+  const meshRef = useRef();
+
+  // Rotates continuously
+  useFrame(() => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.005; // slow Y-axis spin
+      meshRef.current.rotation.x += 0.002; // optional X-axis drift
+    }
+  });
+
+  return (
+    <mesh ref={meshRef}>
+      <icosahedronGeometry args={[1.5, 0]} />
+      <meshStandardMaterial color="#ff5050" roughness={0.6} metalness={0.3} />
+    </mesh>
+  );
+}
+
+export default function Hero() {
+  return (
+    <section className="min-h-screen bg-[#1a1a1a] text-white sm:pt-25 flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10">
+      {/* Left Text Content */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-start gap-6 max-w-xl"
+      >
+        <p className="text-sm tracking-widest uppercase text-red-500">
+          Nurturing backend roots,<br></br> Shaping frontend leaves, I am Groot.
+        </p>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          Ansh <span className="text-red-500">Tamrakar</span>
+        </h1>
+        <h2 className="text-xl md:text-2xl font-medium text-gray-300">
+          Full Stack Java Developer
+        </h2>
+        <ScrollLink
+  to="projects"
+  smooth={true}
+  duration={500}
+  className="mt-4 inline-flex items-center text-red-500 hover:underline group cursor-pointer"
+>
+  View My Work
+  <svg
+    className="w-5 h-5 ml-2 transform group-hover:translate-y-1 transition-transform"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+</ScrollLink>
+
+      </motion.div>
+
+      {/* Right Side Graphic or 3D Model */}
+      <motion.div
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="w-full md:w-1/2 h-[300px] md:h-[400px] bg-[#1a1a1a] rounded-xl shadow-xl flex items-center justify-center"
+>
+  <Canvas>
+  <ambientLight intensity={0.5} />
+  <directionalLight position={[3, 3, 3]} />
+  <OrbitControls enableZoom={false} />
+  <TreeSphere />
+</Canvas>
+</motion.div>
+
+    </section>
+  );
+}
