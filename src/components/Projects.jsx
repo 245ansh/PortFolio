@@ -36,6 +36,16 @@ const projects = [
   },
 ];
 
+// Animation Variants
+const projectVariant = {
+  hidden: { opacity: 0, y: 50 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.3 },
+  }),
+};
+
 export default function Projects() {
   return (
     <section
@@ -46,25 +56,29 @@ export default function Projects() {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="ml-18 text-3xl font-bold text-center mb-20 border-b border-red-500 inline-block"
+        className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2 inline-block"
       >
         My Projects
       </motion.h2>
 
-      <div className="max-w-5xl mx-auto flex flex-col gap-24">
+      <div className="max-w-6xl mx-auto flex flex-col gap-24">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            custom={index}
+            initial="hidden"
+            whileInView="show"
+            variants={projectVariant}
+            viewport={{ once: true }}
             className="flex flex-col md:flex-row gap-8 items-start bg-[#2a2a2a]/90 rounded-xl border border-[#333] hover:border-red-500 shadow-md hover:shadow-red-500/20 p-6 transition-all"
           >
-            {/* Logo */}
-            <img
+            {/* Logo (Always Left) */}
+            <motion.img
+              whileHover={{ scale: 1.1, rotate: 1 }}
+              transition={{ type: 'spring', stiffness: 200 }}
               src={project.logo}
               alt={project.title}
-              className="w-20 h-20 object-contain"
+              className="w-24 h-24 object-contain mb-4 md:mb-0"
             />
 
             {/* Content */}
@@ -73,9 +87,17 @@ export default function Projects() {
                 {project.title}
               </h3>
 
-              <div className="space-y-3 text-sm text-gray-300 mb-4">
+              <div className="space-y-3 text-sm text-gray-300 mb-4 leading-relaxed">
                 {project.description.map((point, i) => (
-                  <p key={i}>{point}</p>
+                  <motion.p
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + i * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {point}
+                  </motion.p>
                 ))}
               </div>
 
@@ -84,7 +106,7 @@ export default function Projects() {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="bg-[#3a3a3a] px-2 py-1 rounded-full"
+                    className="bg-[#3a3a3a] px-3 py-1 rounded-full hover:bg-red-500/20 transition-all"
                   >
                     {tech}
                   </span>
@@ -93,14 +115,15 @@ export default function Projects() {
 
               {/* Live Link */}
               {project.link && (
-                <a
+                <motion.a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 text-red-500 text-sm font-medium underline hover:text-red-400"
+                  whileHover={{ x: 3 }}
+                  className="inline-flex items-center gap-1 mt-2 text-red-500 text-sm font-medium underline underline-offset-4 hover:text-red-400 transition-colors"
                 >
                   View Live ↗
-                </a>
+                </motion.a>
               )}
             </div>
           </motion.div>

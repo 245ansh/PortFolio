@@ -27,7 +27,7 @@ export default function About() {
         transition={{ duration: 0.7 }}
         className="flex flex-col gap-6 max-w-3xl text-sm sm:text-base"
       >
-        <h2 className="text-3xl font-bold border-b border-red-500 inline-block pb-1">
+        <h2 className="sm:text-center mx-auto text-start text-3xl font-bold border-b border-red-500 inline-block pb-1">
           About Me
         </h2>
         <p className="text-gray-300 leading-relaxed">

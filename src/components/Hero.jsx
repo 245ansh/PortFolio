@@ -69,15 +69,16 @@ export default function Hero() {
   initial={{ opacity: 0, x: 50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
-  className="w-full md:w-1/2 h-[300px] md:h-[400px] bg-[#1a1a1a] rounded-xl shadow-xl flex items-center justify-center"
+  className="w-full md:w-1/2 h-[220px] md:h-[400px] bg-[#1a1a1a] rounded-xl shadow-xl flex items-center justify-center"
 >
-  <Canvas>
-  <ambientLight intensity={0.5} />
-  <directionalLight position={[3, 3, 3]} />
-  <OrbitControls enableZoom={false} />
-  <TreeSphere scale={isMobile ? 1 : 1.5}/>
-</Canvas>
+  <Canvas className="w-[90%] h-full">
+    <ambientLight intensity={0.5} />
+    <directionalLight position={[3, 3, 3]} />
+    <OrbitControls enableZoom={false} />
+    <TreeSphere scale={isMobile ? 1 : 1.5} />
+  </Canvas>
 </motion.div>
+
 
     </section>
   );
