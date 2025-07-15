@@ -38,14 +38,17 @@ export default function Contact() {
       id="contact"
       className="w-full bg-[#1a1a1a] text-white py-24 px-6 md:px-20"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl font-bold text-center mb-12 border-b border-red-500 inline-block"
-      >
-        Contact Me
-      </motion.h2>
+      <div className="flex justify-center">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2"
+  >
+    Contact Me
+  </motion.h2>
+</div>
+
 
       <div className="max-w-3xl mx-auto">
         {submitted ? (

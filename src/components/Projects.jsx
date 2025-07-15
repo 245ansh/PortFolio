@@ -13,17 +13,6 @@ const projects = [
     link: 'http://tmp-assessai.vercel.app/',
   },
   {
-    title: 'CineSlate',
-    logo: '/projects/cineslate.png',
-    description: [
-      'CineSlate is a movie review and recommendation platform that unifies public and personal movie discovery. Users can browse, review, and rate movies while managing personalized watchlists.',
-      'Built with SpringBoot and Thymeleaf, it provides secure login, seamless record keeping, and advanced search/filter mechanisms. It is optimized for both desktop and mobile use.',
-      'Personalized suggestions are generated based on reviews and interests, and user authentication is handled via secure session control.',
-    ],
-    tech: ['SpringBoot', 'Thymeleaf', 'MySQL', 'HTML/CSS/JS'],
-    link: '',
-  },
-  {
     title: 'SecureNotes',
     logo: '/projects/securenotes.png',
     description: [
@@ -32,6 +21,17 @@ const projects = [
       'Frontend is built in ReactJS with a sleek, responsive UI that emphasizes data safety and user-friendly interactions.',
     ],
     tech: ['SpringBoot', 'ReactJS', 'Spring Security', 'MySQL'],
+    link: 'http://secnotes.s3-website.ap-south-1.amazonaws.com',
+  },
+  {
+    title: 'CineSlate',
+    logo: '/projects/cineslate.png',
+    description: [
+      'CineSlate is a movie review and recommendation platform that unifies public and personal movie discovery. Users can browse, review, and rate movies while managing personalized watchlists.',
+      'Built with SpringBoot and Thymeleaf, it provides secure login, seamless record keeping, and advanced search/filter mechanisms. It is optimized for both desktop and mobile use.',
+      'Personalized suggestions are generated based on reviews and interests, and user authentication is handled via secure session control.',
+    ],
+    tech: ['SpringBoot', 'Thymeleaf', 'MySQL', 'HTML/CSS/JS'],
     link: '',
   },
 ];
@@ -52,14 +52,16 @@ export default function Projects() {
       id="projects"
       className="w-full bg-[#1a1a1a] text-white py-24 px-4"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2 inline-block"
-      >
-        My Projects
-      </motion.h2>
+      <div className="flex justify-center">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2"
+  >
+    My Projects
+  </motion.h2>
+</div>
 
       <div className="max-w-6xl mx-auto flex flex-col gap-24">
         {projects.map((project, index) => (
