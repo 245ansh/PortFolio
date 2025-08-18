@@ -44,7 +44,7 @@ export default function Navbar() {
           Contact
         </ScrollLink>
         <a
-          href="/Grootified.pdf"
+          href="/Finale.pdf"
           download
           className="text-red-500 hover:underline whitespace-nowrap"
         >
