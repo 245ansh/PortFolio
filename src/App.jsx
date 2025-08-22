@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,23 +8,44 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import LearningPath from './components/LearningPath';
+import LoadingScreen from './components/LoadingScreen';
+import AnimatedBackground from './components/AnimatedBackground';
+import CursorFollower from './components/CursorFollower';
+
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen onComplete={() => setIsLoading(false)} />;
+  }
+
   return (
-    <div className="bg-[#1a1a1a] text-white min-h-screen font-sans">
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            {<Hero />}
-            {<About /> }
-            <LearningPath className="hidden sm:block" />
-            {<Skills/>}
-            {<Projects />}
-            {<Contact /> }
-            {<Footer /> }
-          </>
-        } />
-      </Routes>
-    </div>
+    <AnimatedBackground>
+      <CursorFollower />
+      <div className="min-h-screen text-white font-sans">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <Hero />
+              <About />
+              <LearningPath className="hidden sm:block" />
+              <Skills/>
+              <Projects />
+              <Contact />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </AnimatedBackground>
   );
 }

@@ -26,7 +26,7 @@ const isMobile = window.innerWidth < 768;
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-[#1a1a1a] text-white sm:pt-25 flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10">
+    <section className="min-h-screen  text-white sm:pt-25 flex flex-col md:flex-row items-center justify-center px-6 md:px-20 gap-10">
       {/* Left Text Content */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -69,7 +69,7 @@ export default function Hero() {
   initial={{ opacity: 0, x: 50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 0.8 }}
-  className="w-full md:w-1/2 h-[220px] md:h-[400px] bg-[#1a1a1a] rounded-xl shadow-xl flex items-center justify-center"
+  className="w-full md:w-1/2 h-[220px] md:h-[400px]  rounded-xl  flex items-center justify-center"
 >
   <Canvas className="w-[90%] h-full">
     <ambientLight intensity={0.5} />

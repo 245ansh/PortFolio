@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 
 const learningPath = [
-  { name: 'C / C++', level: 75, note: 'Problem-solving base' },
-  { name: 'Java', level: 90, note: 'OOP & backend fundamentals' },
-  { name: 'HTML / CSS / JS', level: 70, note: 'Frontend foundation' },
-  { name: 'ReactJS', level: 70, note: 'UI development' },
-  { name: 'SQL / MySQL', level: 85, note: 'Database basics' },
-  { name: 'Spring Boot', level: 85, note: 'RESTful APIs' },
-  { name: 'AWS', level: 60, note: 'Cloud & deployment' },
+  { name: 'C / C++', level: 75, note: 'Base for Programming Fundamentals' },
+  { name: 'Java', level: 90, note: 'Primary Language for Advanced Programming with Data Structures and Algorithms Learning' },
+  { name: 'HTML / CSS / JS', level: 70, note: 'Frontend Foundations' },
+  { name: 'ReactJS', level: 70, note: 'UI Development' },
+  { name: 'SQL / MySQL', level: 85, note: 'Database Management  ' },
+  { name: 'Spring Boot', level: 85, note: 'Backend Development with RESTful APIs' },
+  { name: 'DevOps', level: 40, note: 'Delving into the world of Deployment' },
 ];
 
 // Animation Variants
@@ -41,7 +41,7 @@ export default function LearningPathTree() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="bg-[#1a1a1a] text-white py-24 px-4 sm:px-8 md:px-24"
+      className=" text-white py-24 px-4 sm:px-8 md:px-24"
     >
       {/* Heading */}
       <motion.h2

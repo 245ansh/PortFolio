@@ -50,7 +50,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="w-full bg-[#1a1a1a] text-white py-24 px-4"
+      className="w-full  text-white py-24 px-4"
     >
       <div className="flex justify-center">
   <motion.h2

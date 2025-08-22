@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const skillCategories = {
   Languages: ['Java', 'C++', 'SQL','Python','HTML', 'CSS', 'JavaScript'],
   Frameworks: ['SpringBoot', 'SpringMVC', 'Hibernate', 'ReactJS', 'TailwindCSS', 'Thymleaf'],
-  Tools: ['Git', 'GitHub', 'Postman', 'VS', 'Intelli', 'Linux', 'AWS','Maven'],
+  Tools: ['Git', 'GitHub', 'Postman', 'Intelli', 'VS', 'Linux', 'AWS', "Jenkins",'Maven',],
   Databases: ['MySQL', 'PostgreSQL', 'MongoDB'],
 };
 
@@ -17,21 +17,22 @@ const logoMap = {
   CSS: '/logos/CSS.svg',
   SpringBoot: '/logos/SpringBoot.svg',
   SpringMVC: '/logos/SpringMVC.svg',
-  Hibernate: '/logos/Hibernate.svg',
+  Hibernate: '/logos/Hibernate.png',
   ReactJS: '/logos/ReactJS.svg',
   TailwindCSS: '/logos/TailwindCSS.svg',
   Thymleaf: '/logos/Thymeleaf.svg',
   Git: '/logos/Git.svg',
-  GitHub: '/logos/Github.svg',
+  GitHub: '/logos/Github.png',
   Postman: '/logos/Postman.svg',
   VS: '/logos/VS.svg',
   Intelli: '/logos/Intelli.svg',
   Linux: '/logos/Linux.svg',
-  AWS: '/logos/AWS.svg',
+  AWS: '/logos/AWS.png',
   MySQL: '/logos/MySQL.svg',
   PostgreSQL: '/logos/PostgreSQL.svg',
   MongoDB: '/logos/MongoDB.svg',
-  Maven: '/logos/Maven.svg',
+  Maven: '/logos/Maven.png',
+  Jenkins: '/logos/Jenkins.png',
 };
 
 // Card Animation Variant
@@ -53,7 +54,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-[#1a1a1a] text-white py-16 px-4 md:px-20"
+      className=" text-white py-16 px-4 md:px-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
@@ -86,7 +87,7 @@ export default function Skills() {
               {category}
             </motion.h3>
 
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 items-center justify-items-center">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-4 items-center justify-items-center">
               {skills.map((skill, i) => {
                 const icon = logoMap[skill];
                 return (

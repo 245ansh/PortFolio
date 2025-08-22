@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full bg-[#1a1a1a] text-white py-24 px-6 md:px-20"
+      className="w-full  text-white py-24 px-6 md:px-20"
     >
       <div className="flex justify-center">
   <motion.h2

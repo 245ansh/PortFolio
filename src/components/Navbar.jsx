@@ -57,7 +57,7 @@ export default function Navbar() {
             className="hover:scale-110 transition-transform"
           >
             <img
-              src="/logos/Github.svg"
+              src="/logos/Github.png"
               alt="GitHub"
               className="w-5 h-5 object-contain"
             />
