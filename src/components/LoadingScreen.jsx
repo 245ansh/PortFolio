@@ -122,11 +122,11 @@ export default function LoadingScreen({ onComplete }) {
         
         <motion.div
           animate={{
-            rotate: [0, 10, -10, 0],
-            scale: [1, 1.1, 1],
+            rotate: [0, 10],
+            scale: [1, 1.1],
           }}
           transition={{
-            duration: 4,
+            duration: 2,
             repeat: Infinity,
             repeatType: 'reverse',
             ease: 'easeInOut',

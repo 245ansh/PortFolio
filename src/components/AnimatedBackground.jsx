@@ -12,17 +12,36 @@ const Particle = ({ color = '#ef4444', size = 1, delay = 0 }) => {
       await animate(opacity, 0.8, { duration: 0.5, delay });
       await animate(scale, 1, { duration: 0.5 });
       
+      // Initial position
+      let currentX = x.get();
+      let currentY = y.get();
+      
       while (true) {
-        await animate(
-          x,
-          [x.get(), x.get() + (Math.random() - 0.5) * 30],
-          { duration: 3 + Math.random() * 2, ease: 'easeInOut' }
-        );
-        await animate(
-          y,
-          [y.get(), y.get() + (Math.random() - 0.5) * 20],
-          { duration: 2 + Math.random() * 2, ease: 'easeInOut' }
-        );
+        // Generate new target position within bounds (0-100%)
+        const targetX = Math.max(0, Math.min(100, currentX + (Math.random() - 0.5) * 40));
+        const targetY = Math.max(0, Math.min(100, currentY + (Math.random() - 0.5) * 30));
+        
+        // Vary animation duration for more natural movement
+        const duration = 2 + Math.random() * 3;
+        
+        // Animate both x and y simultaneously with the same duration
+        await Promise.all([
+          animate(x, targetX, { 
+            duration,
+            ease: 'easeInOut',
+          }),
+          animate(y, targetY, {
+            duration,
+            ease: 'easeInOut',
+          })
+        ]);
+        
+        // Update current position
+        currentX = targetX;
+        currentY = targetY;
+        
+        // Random pause between movements
+        await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
       }
     };
     
