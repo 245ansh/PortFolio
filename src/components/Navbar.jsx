@@ -74,6 +74,18 @@ export default function Navbar() {
               className="w-5 h-5 object-contain"
             />
           </a>
+          <a
+            href="https://boxd.it/adck5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img
+              src="/logos/Letterboxd.png"
+              alt="Letterboxd"
+              className="w-5 h-5 object-contain"
+            />
+          </a>
       </div>
     </motion.nav>
   );

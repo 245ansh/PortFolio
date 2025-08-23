@@ -19,29 +19,41 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 items-center text-sm text-gray-400">
-          <a
+        <a
             href="https://github.com/245ansh"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition underline"
+            className="hover:scale-110 transition-transform"
           >
-            GitHub
+            <img
+              src="/logos/Github.png"
+              alt="GitHub"
+              className="w-5 h-5 object-contain"
+            />
           </a>
           <a
             href="https://linkedin.com/in/ansh-tamrakar"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition underline"
+            className="hover:scale-110 transition-transform"
           >
-            LinkedIn
+            <img
+              src="/logos/Linkedin.svg"
+              alt="LinkedIn"
+              className="w-5 h-5 object-contain"
+            />
           </a>
           <a
             href="https://boxd.it/adck5"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition underline"
+            className="hover:scale-110 transition-transform"
           >
-            Letterboxd
+            <img
+              src="/logos/Letterboxd.png"
+              alt="Letterboxd"
+              className="w-5 h-5 object-contain"
+            />
           </a>
         </div>
       </motion.div>
