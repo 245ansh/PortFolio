@@ -3,36 +3,48 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'AssessAI',
-    logo: '/projects/assessai.png',
-    description: [
-      'AssessAI addresses the growing burden on teachers in educational institutions who struggle to offer personalized feedback due to large class sizes. The platform automates grading through an AI engine that evaluates both MCQs and subjective answers.',
-      'It offers distinct dashboards for teachers and students to track performance, attendance, and assignment data. A built-in AI chatbot supports one-on-one interaction, and learning is assessed across audio, visual, and handwriting formats.',
-      'Built with SpringBoot, ReactJS, and MongoDB, this platform aligns with UN SDG 4: Quality Education, ensuring inclusive, personalized learning at scale.',
-    ],
-    tech: ['SpringBoot', 'ReactJS', 'MongoDB'],
-    link: 'http://tmp-assessai.vercel.app/',
+    dashboard: '/projects/dashboard/AssessAI.png',
+    logo: '/projects/logos/AssessAI.png',
+    description: 'AI-powered assessment platform automating grading and providing personalized feedback for educational institutions.',
+    tech: ['SpringBoot', 'ReactJS', 'MySQL', 'Tailwind', "Gemini"],
+    liveLink: 'http://tmp-assessai.vercel.app/',
+    githubLink: 'https://github.com/ChetanSugandhi/AssessAI',
+  },
+  
+  {
+    title: 'Adyanta',
+    dashboard: '/projects/dashboard/Adyanta.png',
+    logo: '/projects/logos/Adyanta.png',
+    description: 'Full-stack training enrollment platform for secure user management and adaptive content delivery.',
+    tech: ['ReactJs', 'Spring Boot', 'MySQL', 'Supabase','Jenkins', 'Nginx', 'Maven'],
+    liveLink: 'https://training.adyanta.in/',
+    githubLink: 'https://github.com/245ansh/adyanta',
+  },
+  
+  {
+    title: 'CineSlate',
+    dashboard: '/projects/dashboard/CineSlate.png',
+    logo: '/projects/logos/CineSlate.png',
+    description: 'Movie review and recommendation platform with personalized suggestions and advanced search features.',
+    tech: ['SpringBoot', 'Thymeleaf', 'MySQL', 'HTML/CSS/JS'],
+    githubLink: 'https://github.com/245ansh/CineSlate',
   },
   {
     title: 'SecureNotes',
-    logo: '/projects/securenotes.png',
-    description: [
-      'SecureNotes is a secure note management system supporting multiple users with role-based permissions. Built using Spring Security, it offers JWT-based authentication and integrates with Google OAuth for social login.',
-      'Security features include encrypted storage, Two-Factor Authentication (2FA), and protected route access. Notes can only be accessed after strict verification, making it suitable for sensitive information.',
-      'Frontend is built in ReactJS with a sleek, responsive UI that emphasizes data safety and user-friendly interactions.',
-    ],
+    dashboard: '/projects/dashboard/SecureNotes.png',
+    logo: '/projects/logos/SecureNotes.png',
+    description: 'Secure note management system with JWT authentication, 2FA, and encrypted storage for sensitive information.',
     tech: ['SpringBoot', 'ReactJS', 'Spring Security', 'MySQL'],
-    link: 'http://secnotes.s3-website.ap-south-1.amazonaws.com',
+    githubLink: 'https://github.com/245ansh/securedspgb',
   },
   {
-    title: 'CineSlate',
-    logo: '/projects/cineslate.png',
-    description: [
-      'CineSlate is a movie review and recommendation platform that unifies public and personal movie discovery. Users can browse, review, and rate movies while managing personalized watchlists.',
-      'Built with SpringBoot and Thymeleaf, it provides secure login, seamless record keeping, and advanced search/filter mechanisms. It is optimized for both desktop and mobile use.',
-      'Personalized suggestions are generated based on reviews and interests, and user authentication is handled via secure session control.',
-    ],
-    tech: ['SpringBoot', 'Thymeleaf', 'MySQL', 'HTML/CSS/JS'],
-    link: '',
+    title: 'TongueFu',
+    dashboard: '/projects/dashboard/TongueFu.png',
+    logo: '/projects/logos/TongueFu.png',
+    description: 'Digital speech therapy platform designed specifically for individuals who stammer and stutter. Features interactive exercises, progress tracking, personalized therapy sessions, and real-time speech analysis.',
+    tech: ['ExpressJs', 'ReactJS', 'MongoDB', 'Tailwind', "NodeJs"],
+    liveLink: 'https://tonguefu.netlify.app/',
+    githubLink: 'https://github.com/ParthGupta84616/TongueFu',
   },
 ];
 
@@ -52,84 +64,106 @@ export default function Projects() {
       id="projects"
       className="w-full  text-white py-24 px-4"
     >
-      <div className="flex justify-center">
-  <motion.h2
-    initial={{ opacity: 0, y: -20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2"
-  >
-    My Projects
-  </motion.h2>
+      <div className="flex justify-center mb-10">
+      <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            Featured Projects
+          </span>
+        </motion.h2>
 </div>
 
-      <div className="max-w-6xl mx-auto flex flex-col gap-24">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            custom={index}
-            initial="hidden"
-            whileInView="show"
-            variants={projectVariant}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row gap-8 items-start bg-[#2a2a2a]/90 rounded-xl border border-[#333] hover:border-red-500 shadow-md hover:shadow-red-500/20 p-6 transition-all"
-          >
-            {/* Logo (Always Left) */}
-            <motion.img
-              whileHover={{ scale: 1.1, rotate: 1 }}
-              transition={{ type: 'spring', stiffness: 200 }}
-              src={project.logo}
-              alt={project.title}
-              className="w-24 h-24 object-contain mb-4 md:mb-0"
-            />
-
-            {/* Content */}
-            <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-red-500 mb-4">
-                {project.title}
-              </h3>
-
-              <div className="space-y-3 text-sm text-gray-300 mb-4 leading-relaxed">
-                {project.description.map((point, i) => (
-                  <motion.p
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + i * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    {point}
-                  </motion.p>
-                ))}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="show"
+              variants={projectVariant}
+              viewport={{ once: true }}
+              className="bg-[#2a2a2a]/90 rounded-xl border border-[#333] hover:border-red-500 shadow-md hover:shadow-red-500/20 p-6 transition-all flex flex-col h-full"
+            >
+              {/* Project Images */}
+              <div className="relative mb-6 overflow-hidden rounded-lg">
+                {/* Dashboard Screenshot */}
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                  src={project.dashboard}
+                  alt={`${project.title} dashboard`}
+                  className="w-full h-55 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a]/70 to-transparent"></div>
+                
+                {/* Project Logo Overlay */}
+                <div className="absolute top-3 right-3">
+                  <motion.img
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                    src={project.logo}
+                    alt={`${project.title} logo`}
+                    className="w-12 h-12 object-contain bg-white/10 backdrop-blur-sm rounded-lg p-1 border border-white/20"
+                  />
+                </div>
               </div>
 
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-3 text-xs text-gray-400 mb-3">
-                {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="bg-[#3a3a3a] px-3 py-1 rounded-full hover:bg-red-500/20 transition-all"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              {/* Content */}
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-xl font-semibold text-red-500 mb-3">
+                  {project.title}
+                </h3>
 
-              {/* Live Link */}
-              {project.link && (
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ x: 3 }}
-                  className="inline-flex items-center gap-1 mt-2 text-red-500 text-sm font-medium underline underline-offset-4 hover:text-red-400 transition-colors"
-                >
-                  View Live ↗
-                </motion.a>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                <p className="text-sm text-gray-300 mb-4 leading-relaxed flex-1">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 text-xs text-gray-400 mb-6">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-[#3a3a3a] px-2 py-1 rounded-full hover:bg-red-500/20 transition-all"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3 mt-auto">
+                  {project.liveLink && (
+                    <motion.a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 bg-red-500 hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center"
+                    >
+                      Live Demo
+                    </motion.a>
+                  )}
+                  <motion.a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`${project.liveLink ? 'flex-1' : 'w-full'} bg-[#3a3a3a] hover:bg-[#4a4a4a] text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors text-center`}
+                  >
+                    GitHub
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

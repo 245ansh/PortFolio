@@ -9,7 +9,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed top-6 inset-x-0 z-50 flex justify-center px-4"
     >
-      <div className="flex flex-wrap justify-center items-center gap-4 px-6 py-2 max-w-[90vw] rounded-full shadow-xl border border-[#2e2e2e] bg-[#1a1a1a]/60 backdrop-blur-md text-sm text-gray-300">
+      <div className="flex flex-wrap justify-center items-center gap-4 px-8 py-4 max-w-[100vw] rounded-full shadow-xl border border-[#2e2e2e] bg-[#1a1a1a]/60 backdrop-blur-md text-md text-gray-300">
         {/* Navigation Links */}
         <ScrollLink
           to="about"
@@ -44,48 +44,13 @@ export default function Navbar() {
           Contact
         </ScrollLink>
         <a
-          href="/Finale.pdf"
+          href="/Readyy.pdf"
           download
           className="text-red-500 hover:underline whitespace-nowrap"
         >
           Resume
         </a>
-          <a
-            href="https://github.com/245ansh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img
-              src="/logos/Github.png"
-              alt="GitHub"
-              className="w-5 h-5 object-contain"
-            />
-          </a>
-          <a
-            href="https://linkedin.com/in/ansh-tamrakar"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img
-              src="/logos/Linkedin.svg"
-              alt="LinkedIn"
-              className="w-5 h-5 object-contain"
-            />
-          </a>
-          <a
-            href="https://boxd.it/adck5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform"
-          >
-            <img
-              src="/logos/Letterboxd.png"
-              alt="Letterboxd"
-              className="w-5 h-5 object-contain"
-            />
-          </a>
+
       </div>
     </motion.nav>
   );

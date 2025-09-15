@@ -39,14 +39,16 @@ export default function Contact() {
       className="w-full  text-white py-24 px-6 md:px-20"
     >
       <div className="flex justify-center">
-  <motion.h2
-    initial={{ opacity: 0, y: -20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-    className="text-3xl font-bold text-center mb-20 border-b border-red-500 pb-2"
-  >
-    Contact Me
-  </motion.h2>
+      <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            Contact Me
+          </span>
+        </motion.h2>
 </div>
 
 

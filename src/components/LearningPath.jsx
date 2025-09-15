@@ -7,7 +7,7 @@ const learningPath = [
   { name: 'ReactJS', level: 70, note: 'UI Development' },
   { name: 'SQL / MySQL', level: 85, note: 'Database Management  ' },
   { name: 'Spring Boot', level: 85, note: 'Backend Development with RESTful APIs' },
-  { name: 'DevOps', level: 40, note: 'Delving into the world of Deployment' },
+  { name: 'DevOps', level: 55, note: 'Delving into the world of Deployment' },
 ];
 
 // Animation Variants
@@ -44,37 +44,49 @@ export default function LearningPathTree() {
       className=" text-white py-24 px-4 sm:px-8 md:px-24"
     >
       {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-3xl font-bold text-center mx-auto mb-20 border-b border-red-500 pb-2 w-fit"
-      >
-        My Learning Path
-      </motion.h2>
+      <motion.div className="text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            The Learning Path
+          </span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-gray-400 text-lg max-w-2xl mx-auto"
+        >
+          A journey through technologies, from fundamentals to advanced expertise
+        </motion.p>
+      </motion.div>
 
       {/* Timeline Container */}
       <motion.div
         className="relative flex flex-col items-center"
         variants={containerVariants}
       >
-        {/* Center Stem Line (Animated height) */}
+        {/* Center Stem Line (Animated height with gradient) */}
         <motion.div
-          className="hidden md:block absolute top-0 w-1 bg-red-500 z-0 rounded"
+          className="hidden md:block absolute top-0 w-2 bg-gradient-to-b from-red-400 via-red-500 to-red-600 z-0 rounded-full shadow-lg shadow-red-500/20"
           initial={{ height: 0 }}
           whileInView={{ height: '100%' }}
           transition={{ duration: 1.5, ease: 'easeInOut' }}
         />
         <motion.div
-          className="block md:hidden absolute top-[1.5rem] bottom-[1.5rem] w-1 bg-red-500 z-0 rounded"
+          className="block md:hidden absolute top-[1.5rem] bottom-[1.5rem] w-2 bg-gradient-to-b from-red-400 via-red-500 to-red-600 z-0 rounded-full shadow-lg shadow-red-500/20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         />
 
-        {/* Top Node with Pulse */}
+        {/* Top Node with Pulse and enhanced styling */}
         <motion.div
-          className="w-3 h-3 bg-red-500 rounded-full mb-10 z-10 shadow animate-ping-slow"
+          className="w-4 h-4 bg-gradient-to-br from-red-400 to-red-600 rounded-full mb-10 z-10 shadow-lg shadow-red-500/40 animate-ping-slow ring-2 ring-red-400/30"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 100 }}
@@ -94,15 +106,17 @@ export default function LearningPathTree() {
               }
               hover:scale-[1.03] transition-transform hover:shadow-red-500/20 shadow-lg duration-300`}
           >
-            {/* Connector */}
+            {/* Enhanced Connector */}
             <div
-              className={`hidden md:block absolute top-1/2 w-58 h-1 bg-red-500 z-10 ${
-                idx % 2 === 0 ? 'right-full' : 'left-full'
-              }`}
+              className={`hidden md:block absolute top-1/2 w-58 h-1.5 bg-gradient-to-r ${
+                idx % 2 === 0 
+                  ? 'from-red-500 to-transparent right-full' 
+                  : 'from-transparent to-red-500 left-full'
+              } z-10 shadow-md shadow-red-500/20`}
             ></div>
 
-            <h3 className="text-md font-bold text-red-400">{item.name}</h3>
-            <p className="text-xs italic text-gray-400 mb-2">{item.note}</p>
+            <h3 className="text-lg font-bold text-red-400">{item.name}</h3>
+            <p className="text-sm italic text-gray-400 mb-2">{item.note}</p>
             <div className="w-full h-2 bg-[#444] rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
@@ -111,15 +125,15 @@ export default function LearningPathTree() {
                 className="h-full bg-red-500 rounded-full"
               ></motion.div>
             </div>
-            <p className="text-right text-xs text-gray-500 mt-1">
+            <p className="text-right text-sm text-gray-500 mt-1">
               {item.level}%
             </p>
           </motion.div>
         ))}
 
-        {/* Bottom Node with Pulse */}
+        {/* Bottom Node with Pulse and enhanced styling */}
         <motion.div
-          className="w-3 h-3 bg-red-500 rounded-full mt-10 z-10 shadow animate-ping-slow"
+          className="w-4 h-4 bg-gradient-to-br from-red-400 to-red-600 rounded-full mt-10 z-10 shadow-lg shadow-red-500/40 animate-ping-slow ring-2 ring-red-400/30"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 100 }}
@@ -133,7 +147,9 @@ export default function LearningPathTree() {
         transition={{ duration: 0.8 }}
         className="pt-5 text-3xl font-bold text-center mb-20 w-full"
       >
-        Until the Infinity...
+        <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            Until the Infinity...
+          </span>
       </motion.h2>
     </motion.section>
   );

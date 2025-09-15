@@ -57,14 +57,15 @@ export default function Skills() {
       className=" text-white py-16 px-4 md:px-20"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold text-center mb-16 border-b border-red-500 pb-2 inline-block"
-      >
-        Skills & Technologies
-      </motion.h2>
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          className="text-4xl md:text-5xl font-bold mb-10"
+        >
+          <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+            Skills & Technologies
+          </span>
+        </motion.h2>
 
       <div className="flex flex-col gap-16">
         {Object.entries(skillCategories).map(([category, skills], idx) => (
