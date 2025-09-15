@@ -43,6 +43,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring' }}
+          viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-8"
         >
           <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
@@ -116,6 +117,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
           className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4"
         >
           

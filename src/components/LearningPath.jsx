@@ -49,6 +49,7 @@ export default function LearningPathTree() {
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring' }}
+          viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-4"
         >
           <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
@@ -59,6 +60,7 @@ export default function LearningPathTree() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
           className="text-gray-400 text-lg max-w-2xl mx-auto"
         >
           A journey through technologies, from fundamentals to advanced expertise
@@ -76,12 +78,14 @@ export default function LearningPathTree() {
           initial={{ height: 0 }}
           whileInView={{ height: '100%' }}
           transition={{ duration: 1.5, ease: 'easeInOut' }}
+          viewport={{ once: true }}
         />
         <motion.div
           className="block md:hidden absolute top-[1.5rem] bottom-[1.5rem] w-2 bg-gradient-to-b from-red-400 via-red-500 to-red-600 z-0 rounded-full shadow-lg shadow-red-500/20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
         />
 
         {/* Top Node with Pulse and enhanced styling */}
@@ -90,6 +94,7 @@ export default function LearningPathTree() {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 100 }}
+          viewport={{ once: true }}
         />
 
         {/* Skill Cards */}
@@ -122,6 +127,7 @@ export default function LearningPathTree() {
                 initial={{ width: 0 }}
                 whileInView={{ width: `${item.level}%` }}
                 transition={{ duration: 0.8, delay: 0.2, type: 'spring' }}
+                viewport={{ once: true }}
                 className="h-full bg-red-500 rounded-full"
               ></motion.div>
             </div>
@@ -137,6 +143,7 @@ export default function LearningPathTree() {
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 100 }}
+          viewport={{ once: true }}
         />
       </motion.div>
 
@@ -145,6 +152,7 @@ export default function LearningPathTree() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
         className="pt-5 text-3xl font-bold text-center mb-20 w-full"
       >
         <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">

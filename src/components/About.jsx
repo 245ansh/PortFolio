@@ -11,6 +11,7 @@ export default function About() {
         initial={{ opacity: 0, x: -40, scale: 0.9 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
         className="relative group flex-shrink-0 mx-auto md:mx-0"
       >
         {/* Animated outer glow effect */}
@@ -60,12 +61,14 @@ export default function About() {
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
         className="flex flex-col gap-6 max-w-3xl text-sm sm:text-base"
       >
         <motion.h2
           initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: 'spring' }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: 'spring' }}
+        viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold "
         >
           <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
@@ -93,6 +96,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
             className="text-center p-4 bg-gradient-to-br from-red-900/20 to-red-700/10 rounded-lg border border-red-500/20"
           >
             <div className="text-2xl font-bold text-red-400">10+</div>
@@ -103,6 +107,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
             className="text-center p-4 bg-gradient-to-br from-red-900/20 to-red-700/10 rounded-lg border border-red-500/20"
           >
             <div className="text-2xl font-bold text-red-400">3+</div>
@@ -113,6 +118,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
             className="text-center p-4 bg-gradient-to-br from-red-900/20 to-red-700/10 rounded-lg border border-red-500/20"
           >
             <div className="text-2xl font-bold text-red-400">15+</div>
@@ -123,6 +129,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
             className="text-center p-4 bg-gradient-to-br from-red-900/20 to-red-700/10 rounded-lg border border-red-500/20"
           >
             <div className="text-2xl font-bold text-red-400">100%</div>

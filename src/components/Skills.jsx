@@ -239,6 +239,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: 'spring' }}
+          viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-10 text-center"
         >
           <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
@@ -251,6 +252,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
           className="mb-8 max-w-2xl mx-auto"
         >
           {/* Search Input */}
@@ -293,6 +295,7 @@ export default function Skills() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
           >
             {filteredSkills.map((skill, index) => (
