@@ -36,13 +36,30 @@ export default function Navbar() {
           Projects
         </ScrollLink>
         <ScrollLink
-          to="contact"
+          to="experience"
           smooth={true}
           duration={500}
           className="cursor-pointer hover:text-red-500 transition whitespace-nowrap"
         >
-          Contact
+          Experience
         </ScrollLink>
+        <ScrollLink
+          to="education"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer hover:text-red-500 transition whitespace-nowrap"
+        >
+          Education
+        </ScrollLink>
+        <ScrollLink
+          to="reviews"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer hover:text-red-500 transition whitespace-nowrap"
+        >
+          Reviews
+        </ScrollLink>
+        
         <a
           href="/Readyy.pdf"
           download

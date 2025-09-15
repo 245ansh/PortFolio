@@ -78,7 +78,7 @@ export default function Projects() {
 </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -97,7 +97,7 @@ export default function Projects() {
                   transition={{ type: 'spring', stiffness: 200 }}
                   src={project.dashboard}
                   alt={`${project.title} dashboard`}
-                  className="w-full h-55 object-cover"
+                  className="w-full h-90 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2a2a2a]/70 to-transparent"></div>
                 

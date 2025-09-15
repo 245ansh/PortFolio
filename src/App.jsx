@@ -8,6 +8,9 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import LearningPath from './components/LearningPath';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import Reviews from './components/Reviews';
 import LoadingScreen from './components/LoadingScreen';
 import AnimatedBackground from './components/AnimatedBackground';
 import CursorFollower from './components/CursorFollower';
@@ -38,8 +41,11 @@ export default function App() {
               <Hero />
               <About />
               <LearningPath className="hidden sm:block" />
-              <Skills/>
+              <Skills />
               <Projects />
+              <Experience />
+              <Education />
+              <Reviews />
               <Contact />
               <Footer />
             </>
