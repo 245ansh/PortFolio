@@ -291,7 +291,7 @@ export default function Hero() {
           
           {/* GitHub Button */}
           <a
-            href="https://github.com/ansh245"
+            href="https://github.com/245ansh"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 bg-black border border-red-600 text-red-500 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-black hover:shadow-lg hover:shadow-red-500/20 flex items-center gap-2 text-sm font-medium"
@@ -316,7 +316,7 @@ export default function Hero() {
           </a>
           {/* LeetCode Button */}
           <a
-            href="https://leetcode.com/ansh245"
+            href="https://leetcode.com/u/245ansh/"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-2 bg-black border border-red-600 text-red-500 rounded-md transition-all duration-300 hover:bg-red-600 hover:text-black hover:shadow-lg hover:shadow-red-500/20 flex items-center gap-2 text-sm font-medium"
