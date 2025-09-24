@@ -9,10 +9,9 @@ const experiences = [
     period: "July 2025 – Present",
     description: "Currently working as a Full Stack Java Intern, developing comprehensive training modules and IoT device management platforms using modern technologies and deployment strategies.",
     achievements: [
-      "Developed comprehensive training module with React.js, Spring Boot, MySQL, and Supabase for user enrollment and authentication, improving training participation by 25% through intuitive workflows and real-time progress tracking",
-      "Configured multi-service deployments on local environments using Kubernetes and Ansible to automate server setups and environment replication, reducing deployment time by 20% and optimizing system stability",
-      "Automated CI/CD pipelines using Jenkins, streamlining build, test, and deployment processes, increasing deployment frequency by 50% and minimizing human error",
-      "Enhanced IoT device management platform using Nginx, MQTT, MySQL, and Spring Boot for real-time device monitoring and configuration, refining system uptime by 35% during high-load scenarios"
+      "Built a training module with React.js, Spring Boot, MySQL, and Supabase for user enrollment and authentication with real-time progress tracking.",
+      "Configured multi-service deployments using Kubernetes and Ansible to automate server setups and environment replication.",
+      "Automated CI/CD pipelines using Jenkins to streamline build, test, and deployment processes.",
     ],
     technologies: ["Springboot", "ReactJs", "Tailwind", "Supabase", "Jenkins", "Kubernetes", "Nginx", "Ansible"]
   },
